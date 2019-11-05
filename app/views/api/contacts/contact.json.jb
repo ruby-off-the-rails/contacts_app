@@ -1,1 +1,6 @@
-{message: "hello"}
+{
+  fn: @contact.first_name,
+  ln: @contact.last_name,
+  email: @contact.email,
+  phone_number: @contact.phone_number
+}
