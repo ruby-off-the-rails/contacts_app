@@ -1,0 +1,12 @@
+array_of_hashes = []
+@contacts.each do |contact|
+  array_of_hashes << {
+    fn: contact.first_name,
+    ln: contact.last_name,
+    email: contact.email,
+    phone_number: contact.phone_number
+  }
+end
+
+
+array_of_hashes
