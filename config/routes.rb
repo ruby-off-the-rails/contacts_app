@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   # end
   namespace :api do
     #      url               controller#method
-    get "/first_contact" => "contacts#show_me_the_contact"
-    # show all the contacts in one route
-    get "/all_contacts" => "contacts#all"
+    get "/contacts" => "contacts#index"
+    post "/contacts" => "contacts#create"
+    get "/contacts/:id" => "contacts#show"
+    patch "/contacts/:id" => "contacts#update"
+    delete "/contacts/:id" => "contacts#destroy"
   end
 end
