@@ -5,6 +5,8 @@
   last_name: @contact.last_name,
   full_name: @contact.full_name,
   bio: @contact.bio,
+  lat: @contact.lat,
+  lng: @contact.lng,
   email: @contact.email,
   phone_number: @contact.japanese_phone_number,
   created_at: @contact.friendly_created_at

@@ -10,13 +10,24 @@ class Api::ContactsController < ApplicationController
   end
 
   def create
+    # take in an address
+    address = params[:address]
+    # send that address to geocoder
+    coordinates = Geocoder.coordinates(address)
+    # get back lat/lng
+    latitude = coordinates[0]
+    longitude = coordinates[1]
+    # save the lat/lng
+
     @contact = Contact.new(
       first_name: params[:first_name],
       middle_name: params[:middle_name],
       last_name: params[:last_name],
       email: params[:email],
       phone_number: params[:phone_number],
-      bio: params[:bio]
+      bio: params[:bio],
+      lat: latitude,
+      lng: longitude
     )
     @contact.save
     render 'show.json.jb'
