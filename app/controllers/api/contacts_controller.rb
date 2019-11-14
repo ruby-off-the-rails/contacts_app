@@ -29,8 +29,11 @@ class Api::ContactsController < ApplicationController
       lat: latitude,
       lng: longitude
     )
-    @contact.save
-    render 'show.json.jb'
+    if @contact.save
+      render 'show.json.jb'
+    else
+      render json: {errors: @contact.errors.full_messages}, status: :unprocessable_entity
+    end
   end
 
   def update
