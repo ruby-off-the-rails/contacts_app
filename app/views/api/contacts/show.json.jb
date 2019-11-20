@@ -9,5 +9,6 @@
   lng: @contact.lng,
   email: @contact.email,
   phone_number: @contact.japanese_phone_number,
-  created_at: @contact.friendly_created_at
+  created_at: @contact.friendly_created_at,
+  user_id: @contact.user_id
 }
