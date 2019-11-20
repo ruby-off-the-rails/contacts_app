@@ -3,7 +3,8 @@ class Api::ContactsController < ApplicationController
     # p "***" * 5
     # p current_user
     # p "***" * 5
-    @contacts = Contact.all
+    # @contacts = current_user.contacts
+    @contacts = Contact.where(user_id: current_user.id)
     render 'index.json.jb'
   end
 
