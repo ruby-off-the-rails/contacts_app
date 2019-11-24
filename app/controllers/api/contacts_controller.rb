@@ -8,7 +8,7 @@ class Api::ContactsController < ApplicationController
 
 
     # find a category
-    group = Group.find_by(id: 2)
+    group = Group.find_by(name: params[:name])
     # find all the contacts from that group
     @contacts = group.contacts.where(user_id: current_user.id)
     render 'index.json.jb'
