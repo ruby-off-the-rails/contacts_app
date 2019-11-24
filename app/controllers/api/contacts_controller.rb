@@ -5,6 +5,12 @@ class Api::ContactsController < ApplicationController
     # p "***" * 5
     # @contacts = current_user.contacts
     @contacts = Contact.where(user_id: current_user.id)
+
+
+    # find a category
+    group = Group.find_by(id: 2)
+    # find all the contacts from that group
+    @contacts = group.contacts.where(user_id: current_user.id)
     render 'index.json.jb'
   end
 
